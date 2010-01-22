@@ -1,0 +1,11 @@
+INCLUDE_DIRECTORIES(${wxmapconv_SOURCE_DIR} ${wxmapconv_SOURCE_DIR}/src )
+
+SET(wxmapconvSrc
+	src/main.cpp
+	src/main.h
+	src/resources.h
+	src/wxwfrontendcompile.cpp
+	src/wxwfrontend.cpp
+	src/wxwfrontend.h
+	src/wxwfrontendopen.cpp
+	)
