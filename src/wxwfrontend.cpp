@@ -11,7 +11,7 @@ Frontend::Frontend(const wxString& title)
     bOtherEnable = false;
     bOtherFirstTime = true;
 
-    bPreviewLoaded = false;
+	//!TODO bPreviewLoaded = false;
 
     notebook = new wxNotebook(this, IDNB_MAIN);
     pnlMapConv = new wxPanel(notebook, -1);
@@ -120,8 +120,8 @@ Frontend::Frontend(const wxString& title)
 
     wxBoxSizer *hboxMax = new wxBoxSizer(wxHORIZONTAL);
     wxBoxSizer *hboxMin = new wxBoxSizer(wxHORIZONTAL);
-    tcMax = new wxTextCtrl(pnlMapConv, wxID_ANY, "250", wxDefaultPosition, wxSize(30,20), 0,wxDefaultValidator,"tcMax");
-    tcMin = new wxTextCtrl(pnlMapConv, wxID_ANY, "25", wxDefaultPosition, wxSize(30,20), 0,wxDefaultValidator,"tcMin");
+	tcMax = new wxTextCtrl(pnlMapConv, wxID_ANY, _T("250"), wxDefaultPosition, wxSize(30,20), 0,wxDefaultValidator, _T("tcMax") );
+	tcMin = new wxTextCtrl(pnlMapConv, wxID_ANY, _T("25"), wxDefaultPosition, wxSize(30,20), 0,wxDefaultValidator, _T("tcMin") );
     stMax = new wxStaticText(pnlMapConv, wxID_ANY, wxT("Maximum"), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT, wxT("MaxHeight"));
     stMin = new wxStaticText(pnlMapConv, wxID_ANY, wxT("Minimum"), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT, wxT("MinHeight"));
     cbLowpass = new wxCheckBox(pnlMapConv, IDCB_LOWPASS, wxT("Lowpass"));
@@ -131,10 +131,10 @@ Frontend::Frontend(const wxString& title)
 
 
     wxBoxSizer *hboxCompression = new wxBoxSizer(wxHORIZONTAL);
-    tcCompression = new wxTextCtrl(pnlMapConv, wxID_ANY, wxT("0.8"), wxDefaultPosition, wxSize(30,20), 0,wxDefaultValidator,"wxTextCtrl");
+	tcCompression = new wxTextCtrl(pnlMapConv, wxID_ANY, wxT("0.8"), wxDefaultPosition, wxSize(30,20), 0,wxDefaultValidator,_T("wxTextCtrl") );
     stCompression = new wxStaticText(pnlMapConv, wxID_ANY, wxT("Compression"), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT, wxT("Compression"));
     wxBoxSizer *hboxFeatureRotate = new wxBoxSizer(wxHORIZONTAL);
-    tcFeatureRotate = new wxTextCtrl(pnlMapConv, wxID_ANY, wxT("0"), wxDefaultPosition, wxSize(30,20), 0,wxDefaultValidator,"wxTextCtrl");
+	tcFeatureRotate = new wxTextCtrl(pnlMapConv, wxID_ANY, wxT("0"), wxDefaultPosition, wxSize(30,20), 0,wxDefaultValidator,_T("wxTextCtrl") );
     stFeatureRotate = new wxStaticText(pnlMapConv, wxID_ANY, wxT("Rotate # features"), wxDefaultPosition, wxDefaultSize, wxALIGN_LEFT, wxT("FeatureRotate"));
 
     wxArrayString *asQuality = new wxArrayString();
@@ -180,7 +180,7 @@ Frontend::Frontend(const wxString& title)
     hboxMain->Add(vboxOptions, 1, wxTOP | wxBOTTOM | wxALIGN_RIGHT, 5);
 
     pnlMapConv->SetSizer(hboxMain);
-    notebook->AddPage(pnlMapConv, "MapConv", true);
+	notebook->AddPage(pnlMapConv, _T("MapConv"), true);
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //SMD////////////////////////////////////////////////////////////////////////////////////e2F//////////
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -192,20 +192,20 @@ Frontend::Frontend(const wxString& title)
 
     wxPanel *pnlSMDGeneral = new wxPanel(pnlSMD, -1);
     wxBoxSizer *vboxSMDGeneralMain = new wxBoxSizer(wxVERTICAL);
-    wxStaticBoxSizer *gboxSMDGeneral = new wxStaticBoxSizer(wxVERTICAL, pnlSMDGeneral, "General Ma0 Options");
-    wxStaticBoxSizer *gboxSMDStartPos = new wxStaticBoxSizer(wxVERTICAL, pnlSMDGeneral, "Player Start Options");
+	wxStaticBoxSizer *gboxSMDGeneral = new wxStaticBoxSizer(wxVERTICAL, pnlSMDGeneral, _T("General Ma0 Options") );
+	wxStaticBoxSizer *gboxSMDStartPos = new wxStaticBoxSizer(wxVERTICAL, pnlSMDGeneral, _T("Player Start Options") );
 
     vboxSMDGeneralMain->Add(gboxSMDGeneral, 1, wxEXPAND, 0);
     vboxSMDGeneralMain->Add(gboxSMDStartPos, 1, wxEXPAND, 0);
 
     pnlSMDGeneral->SetSizer(vboxSMDGeneralMain);
 
-    nbSMD->AddPage(pnlSMDGeneral, "General", true);
-    nbSMD->AddPage(pnlSMDGeneral, "General2", true);
+	nbSMD->AddPage(pnlSMDGeneral, _T("General"), true);
+	nbSMD->AddPage(pnlSMDGeneral, _T("General2"), true);
     pnlSMD->SetSizer( box );
     pnlSMD->Layout();
 
-    notebook->AddPage(pnlSMD, "SMD", true);
+	notebook->AddPage(pnlSMD, _T("SMD"), true);
     notebook->ChangeSelection(1);
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //Connect the controls to their appropriate functions///////////////////////////////////////////////
@@ -286,7 +286,7 @@ void Frontend::OnToggleOtherEnable(wxCommandEvent& event)
 {
     if(bOtherFirstTime == true)
     {
-        tcOtherOptions->SetValue("");
+		tcOtherOptions->SetValue(wxEmptyString);
         bOtherFirstTime = false;
     }
     if(bOtherEnable == false)

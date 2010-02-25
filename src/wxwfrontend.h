@@ -17,7 +17,7 @@ class Frontend : public wxFrame{
         void OnClickLoadProject(wxCommandEvent& event);
         void OnClickSaveProject(wxCommandEvent& event);
         void OnClickSaveProjectAs(wxCommandEvent& event);
-
+		void OnTabSwitch(wxCommandEvent& event);
         void OnChangePreview(wxCommandEvent& event);
 
         void OnToggleLowpass(wxCommandEvent& event);
