@@ -1,1 +1,4 @@
 #include <wx/msw/wx.rc>
+
+IDBM_PREVIEW_PLACEHOLDER BITMAP "placeholder.bmp"
+IDBM_PREVIEW_BIG_PLACEHOLDER BITMAP "placeholderbig.bmp"
