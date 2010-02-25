@@ -1,0 +1,62 @@
+[MAP]
+{
+	Description=Description of your map;
+	TidalStrength=20;
+	Gravity=130;
+	MaxMetal=3.0;
+	ExtractorRadius=50;
+	MapHardness=100;
+	[SMF]
+	{
+		minheight = 25;
+		maxheight = 250;
+	}
+	[ATMOSPHERE]
+	{
+		FogColour=0.392 0.392 0.392;
+		FogStart=0.55;
+		SunColour=1.000 0.784 0.078;
+		SkyColour=0.078 0.078 0.941;
+		CloudColour=0.588 0.588 0.588;
+		CloudDensity=0.55;
+		MinWind=10;
+		MaxWind=30;
+	}
+	[LIGHT]
+	{
+		SunDir=1 2 0;
+		GroundAmbientColour=0.498 0.498 0.498;
+		GroundSunColour=0.498 0.498 0.498;
+		GroundShadowDensity=0.55;
+		UnitAmbientColour=0.498 0.498 0.498;
+		UnitSunColour=0.498 0.498 0.498;
+		UnitShadowDensity=0.55;
+	}
+	[WATER]
+	{
+		WaterBaseColour=0.392 0.588 0.784;
+		WaterMinColour=0.039 0.039 0.117;
+		WaterAbsorbColour=0.0156 0.0156 0.0078;
+	}
+	[TEAM3]
+	{
+		StartPosX=64;
+		StartPosZ=64;
+	}
+	[TEAM2]
+	{
+		StartPosX=64;
+		StartPosZ=64;
+	}
+	[TEAM1]
+	{
+		StartPosX=64;
+		StartPosZ=64;
+	}
+	[TEAM0]
+	{
+		StartPosX=64;
+		StartPosZ=64;
+	}
+
+}

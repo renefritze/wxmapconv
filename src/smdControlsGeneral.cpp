@@ -1,0 +1,112 @@
+#include "wxwfrontend.h"
+
+void Frontend::OnChangeTeamCount(wxCommandEvent& event){
+    int i = wxAtoi(tcTeamCount->GetValue());
+
+    if(i>8)       i=8;
+    else if(i<2)    i=2;
+
+    tcTeamCount->ChangeValue(wxString::Format(wxT("%i"), i));
+
+    if(i!=iOldTeamCount)
+    {
+        if(i==2){
+            tcTeam3X->Enable(false);
+            tcTeam3Y->Enable(false);
+            tcTeam4X->Enable(false);
+            tcTeam4Y->Enable(false);
+            tcTeam5X->Enable(false);
+            tcTeam5Y->Enable(false);
+            tcTeam6X->Enable(false);
+            tcTeam6Y->Enable(false);
+            tcTeam7X->Enable(false);
+            tcTeam7Y->Enable(false);
+            tcTeam8X->Enable(false);
+            tcTeam8Y->Enable(false);
+        }
+        if(i==3){
+            tcTeam3X->Enable(true);
+            tcTeam3Y->Enable(true);
+            tcTeam4X->Enable(false);
+            tcTeam4Y->Enable(false);
+            tcTeam5X->Enable(false);
+            tcTeam5Y->Enable(false);
+            tcTeam6X->Enable(false);
+            tcTeam6Y->Enable(false);
+            tcTeam7X->Enable(false);
+            tcTeam7Y->Enable(false);
+            tcTeam8X->Enable(false);
+            tcTeam8Y->Enable(false);
+        }
+        if(i==4){
+            tcTeam3X->Enable(true);
+            tcTeam3Y->Enable(true);
+            tcTeam4X->Enable(true);
+            tcTeam4Y->Enable(true);
+            tcTeam5X->Enable(false);
+            tcTeam5Y->Enable(false);
+            tcTeam6X->Enable(false);
+            tcTeam6Y->Enable(false);
+            tcTeam7X->Enable(false);
+            tcTeam7Y->Enable(false);
+            tcTeam8X->Enable(false);
+            tcTeam8Y->Enable(false);
+        }
+        if(i==5){
+            tcTeam3X->Enable(true);
+            tcTeam3Y->Enable(true);
+            tcTeam4X->Enable(true);
+            tcTeam4Y->Enable(true);
+            tcTeam5X->Enable(true);
+            tcTeam5Y->Enable(true);
+            tcTeam6X->Enable(false);
+            tcTeam6Y->Enable(false);
+            tcTeam7X->Enable(false);
+            tcTeam7Y->Enable(false);
+            tcTeam8X->Enable(false);
+            tcTeam8Y->Enable(false);
+        }
+        if(i==6){
+            tcTeam3X->Enable(true);
+            tcTeam3Y->Enable(true);
+            tcTeam4X->Enable(true);
+            tcTeam4Y->Enable(true);
+            tcTeam5X->Enable(true);
+            tcTeam5Y->Enable(true);
+            tcTeam6X->Enable(true);
+            tcTeam6Y->Enable(true);
+            tcTeam7X->Enable(false);
+            tcTeam7Y->Enable(false);
+            tcTeam8X->Enable(false);
+            tcTeam8Y->Enable(false);
+        }
+        if(i==7){
+            tcTeam3X->Enable(true);
+            tcTeam3Y->Enable(true);
+            tcTeam4X->Enable(true);
+            tcTeam4Y->Enable(true);
+            tcTeam5X->Enable(true);
+            tcTeam5Y->Enable(true);
+            tcTeam6X->Enable(true);
+            tcTeam6Y->Enable(true);
+            tcTeam7X->Enable(true);
+            tcTeam7Y->Enable(true);
+            tcTeam8X->Enable(false);
+            tcTeam8Y->Enable(false);
+        }
+        if(i==8){
+            tcTeam3X->Enable(true);
+            tcTeam3Y->Enable(true);
+            tcTeam4X->Enable(true);
+            tcTeam4Y->Enable(true);
+            tcTeam5X->Enable(true);
+            tcTeam5Y->Enable(true);
+            tcTeam6X->Enable(true);
+            tcTeam6Y->Enable(true);
+            tcTeam7X->Enable(true);
+            tcTeam7Y->Enable(true);
+            tcTeam8X->Enable(true);
+            tcTeam8Y->Enable(true);
+        }
+    }
+}
